@@ -1,0 +1,15 @@
+{
+  "name": "web-studio",
+  "owner": {
+    "name": "Natthasak Wiwatwisawakorn",
+    "url": "https://github.com/nattawai"
+  },
+  "plugins": [
+    {
+      "name": "web-studio",
+      "source": "./",
+      "description": "Workflow สร้างเว็บครบวงจร: Brief → Direction → Structure → Stack → Build → Motion → QA → Deploy เลือก stack ตามงานและเปลี่ยนได้",
+      "version": "0.1.0"
+    }
+  ]
+}

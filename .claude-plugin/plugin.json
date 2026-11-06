@@ -1,0 +1,21 @@
+{
+  "name": "web-studio",
+  "version": "0.1.0",
+  "description": "Workflow สร้างเว็บครบวงจร: Brief → Direction → Structure → Stack → Build → Motion → QA → Deploy เลือก stack ตามงานและเปลี่ยนได้",
+  "author": {
+    "name": "Natthasak Wiwatwisawakorn",
+    "url": "https://github.com/nattawai"
+  },
+  "homepage": "https://github.com/nattawai/web-studio",
+  "repository": "https://github.com/nattawai/web-studio",
+  "license": "MIT",
+  "keywords": [
+    "web",
+    "landing-page",
+    "parallax",
+    "workflow",
+    "react",
+    "gsap",
+    "cloudflare-pages"
+  ]
+}
