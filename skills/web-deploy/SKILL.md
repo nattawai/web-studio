@@ -21,3 +21,7 @@ description: Deploy เว็บขึ้นจริง (default Cloudflare Pag
 - ผูก custom domain: wrangler ไม่มีคำสั่ง และห้ามดึง OAuth token ของ wrangler ไปยิง API เอง → ให้ผู้ใช้ login dashboard ใน browser pane แล้วทำผ่าน UI: `dash.cloudflare.com/<account>/pages/view/<project>/domains` → Set up a custom domain → ใส่โดเมน → Continue → Activate domain (โซนอยู่บัญชีเดียวกัน CNAME สร้างให้เอง, สถานะ Initializing ไม่กี่นาที)
 - ก่อน deploy เตรียม: og-image 1200×630 (render ด้วย puppeteer จาก token สีของเว็บ), canonical, og:url, twitter:card, sitemap.xml, robots.txt ชี้ sitemap, `public/_headers` cache `/assets/*` immutable
 - curl บน Windows (schannel) อาจล้มด้วย CRYPT_E_REVOCATION_OFFLINE กับ *.pages.dev ใหม่ — ตรวจด้วย puppeteer/Chrome แทน: status ไฟล์ static, header cache, title/og, console, สลับภาษา
+- **Direct Upload (`wrangler pages deploy`) เปลี่ยนเป็น Git ทีหลังไม่ได้** — ถ้าผู้ใช้อยากได้ auto-deploy ให้สร้างโปรเจกต์แบบ Import Git ตั้งแต่แรก (dashboard → Workers & Pages → Create → Pages → Import an existing Git repository; build `npm run build`, output `dist`, preset None ได้)
+- ย้ายโดเมนระหว่างโปรเจกต์: Remove domain ที่โปรเจกต์เก่า → Set up ที่ใหม่ (ล่มประมาณ 1–2 นาที)
+- repo public: commit ด้วย `<id>+<user>@users.noreply.github.com` (ตั้ง `git config --local`), README มี og-image/screenshot/badge Lighthouse/โครงสร้าง/วิธีรัน, LICENSE (MIT สำหรับโค้ด, เนื้อหาส่วนตัวสงวนสิทธิ์), `.gitattributes` eol=lf
+- gh หลายบัญชี: `gh repo create --source . --push` ใช้บัญชี active; push ครั้งต่อไปต้อง `gh auth switch -u <owner>` ก่อน (ตั้ง `credential.username` ไม่ช่วย)
